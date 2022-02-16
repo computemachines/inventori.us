@@ -1,0 +1,14 @@
+.figureGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.figureTitles {
+  /* grid-column: 1; */
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+.figureImage {
+}
