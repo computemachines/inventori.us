@@ -1,0 +1,2 @@
+systemctl stop inventorius-landing-page
+systemctl disable inventorius-landing-page

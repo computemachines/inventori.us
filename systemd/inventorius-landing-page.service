@@ -1,0 +1,13 @@
+[Unit]
+Description="Inventorius Landing Page"
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+ExecStart=/usr/bin/node /usr/lib/inventorius-landing-page/node_modules/.bin/next start /usr/lib/inventorius-landing-page/ -p 4001
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

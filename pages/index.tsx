@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>Inventorius</h1>
         <h3>Open source inventory management for hobbyists and makers.</h3>
-        <Link href="/abc"><a>Live Demo</a></Link>
+        <Link href="https://inventory.computemachines.com"><a>Live Demo</a></Link>
         <Link href="/download"><a>Download</a></Link>
         <AnimatedFigure1 />
       </main>

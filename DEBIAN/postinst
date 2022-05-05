@@ -1,0 +1,2 @@
+systemctl enable inventorius-landing-page
+systemctl start inventorius-landing-page

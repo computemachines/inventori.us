@@ -1,0 +1,11 @@
+Package: inventorius-landing-page
+Maintainer: Tyler Parker <tparker@computemachines.com>
+Version: 0.1.0
+Build-Depends: dh-systemd (>=1.5)
+Depends: nginx, nodejs
+Description: Inventory management system for makers and hobbyiests.
+ .
+ This is the Nextjs landing page showcasing Inventorius with documentation.
+Homepage: https://inventori.us
+Source: https://github.com/computemachines/inventorius-landing-page
+Architecture: all
