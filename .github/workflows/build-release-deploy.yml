@@ -1,2 +1,31 @@
 name: Nextjs node build-release-deploy
+on: [push]
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "15.x"
+      - name: get deployment deps
+        run: make package_deps
+      - name: get build deps
+        run: make install_build_deps
+      - name: build
+        run: make build
+      - name: package
+        run: make deb
 
+      - name: get deployment package name
+        run: echo "DEB_NAME=$(basename dist/inventorius-landing-page_*_all.deb)" >> $GITHUB_ENV
+
+
+      - name: Sanity security precaution before upload-artifact
+        run: find . -name \*secrets\* -exec rm -fv {} \;
+
+      - name: upload deployment artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: inventorius-landing-page_latest_all.deb
+          path: dist/${{ env.DEB_NAME }}

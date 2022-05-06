@@ -38,3 +38,4 @@ yarn-error.log*
 
 /package-root
 /dist
+/node_modules.*.tar.gz
